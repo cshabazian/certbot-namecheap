@@ -6,6 +6,10 @@
 # Run first to staging and then to production
 # Setup a cron job to run this script on a regular basis
 
+################################ User Variables ###############################
+SECRETS_FILE=${HOME}/.secrets/namecert
+############################## End User Variables #############################
+
 ############################### Fixed Variables ###############################
 NECESSARY_BINARIES="curl python3 awk certbot"
 PROD_ACME_SERVER="https://acme-v02.api.letsencrypt.org/directory"
