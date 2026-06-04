@@ -21,6 +21,6 @@ Every certificate obtianed from certbot has a lifetime limitation of three month
 
 ## Reference
 
-- certbot-namecheap-hook [Repo]https://github.com/haomingyin/certbot-namecheap-hook
+- certbot-namecheap-hook [Repo](https://github.com/haomingyin/certbot-namecheap-hook)
 - Namecheap official [API](https://www.namecheap.com/support/api/intro.aspx).
 - Certbot [user guide](https://Certbot.eff.org/docs/using.html)
