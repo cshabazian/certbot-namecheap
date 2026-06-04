@@ -1,6 +1,6 @@
 # Certbot Namecheap
 
-Forked from [certbot-namecheap-hook](https://github.com/haomingyin/certbot-namecheap-hook) with an improved (in my opinion) script to obtain and renew SSL certificates from LetsEncrypt using certbot when namecheap is your registry.
+Forked from [certbot-namecheap-hook](https://github.com/haomingyin/certbot-namecheap-hook) with a complete script to obtain and renew SSL certificates from LetsEncrypt using certbot when namecheap is your registry.
 The script can be used to automatically obtain/renew wildcard certificates using [Certbot](https://Certbot.eff.org/).
 
 ## Introduction
