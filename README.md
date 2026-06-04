@@ -1,3 +1,5 @@
+# IN DEVELOPMENT - DO NOT USE YET
+
 # Certbot Namecheap
 
 Forked from [certbot-namecheap-hook](https://github.com/haomingyin/certbot-namecheap-hook) with a complete script to obtain and renew SSL certificates from LetsEncrypt using certbot when namecheap is your registry.
