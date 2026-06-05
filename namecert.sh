@@ -59,6 +59,7 @@ function issue_certificate() {
 
 # Remove the DNS Challenge Record:
 # manage_challenge_record remove}
+}
 
 function renew_certificate() {
 # Check This    certbot renew --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" --email "${EMAIL}" --agree-tos --non-interactive
