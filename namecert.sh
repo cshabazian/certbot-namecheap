@@ -28,7 +28,7 @@ echo "1 is ${1} and 2 is ${2}"
 
 if [[  "${1}" = "issue" ]] ; then echo "1 is issue" ; fi
 
-if [[  "${1}" != "issue" || "${1}" != "renew" ]] ; then echo -e "\nUsage: $(basename ${0}) <issue|renew> <domain.name>\n\n" ; exit ; fi
+if [[  "${1}" != "issue" && "${1}" != "renew" ]] ; then echo -e "\nUsage: $(basename ${0}) <issue|renew> <domain.name>\n\n" ; exit ; fi
 ################################## End Usage ##################################
 
 ###############################################################################
