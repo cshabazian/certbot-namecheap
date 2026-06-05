@@ -51,8 +51,6 @@ function check_permission() {
     fi  
 }
 
-echo "before issue/renew functions"
-
 function issue_certificate() {
 # Check this    certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" -d "${SLD}.${TLD}" --email "${EMAIL}" --agree-tos --non-interactive
 # Figure out how to use
@@ -62,7 +60,7 @@ function issue_certificate() {
 # Remove the DNS Challenge Record:
 # manage_challenge_record remove}
 }
-
+echo "after issue_certificate function"
 function renew_certificate() {
 # Check This    certbot renew --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" --email "${EMAIL}" --agree-tos --non-interactive
 # Figure out how to use
