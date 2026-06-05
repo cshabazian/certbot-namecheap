@@ -59,7 +59,7 @@ function issue_certificate() {
 
 # Remove the DNS Challenge Record:
 # manage_challenge_record remove}
-echo "something"
+#echo "something"
 }
 
 echo "after issue_certificate function"
