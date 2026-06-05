@@ -52,26 +52,26 @@ function check_permission() {
 }
 
 function issue_certificate() {
-# Check this    certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" -d "${SLD}.${TLD}" --email "${EMAIL}" --agree-tos --non-interactive
+# Check this    
+certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" -d "${SLD}.${TLD}" --email "${EMAIL}" --agree-tos --non-interactive
 # Figure out how to use
 # Create the DNS Challenge Record:
 # manage_challenge_record set
 
 # Remove the DNS Challenge Record:
 # manage_challenge_record remove}
-#echo "something"
 }
 
-echo "after issue_certificate function"
-#function renew_certificate() {
-# Check This    certbot renew --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" --email "${EMAIL}" --agree-tos --non-interactive
+function renew_certificate() {
+# Check This    
+certbot renew --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" --email "${EMAIL}" --agree-tos --non-interactive
 # Figure out how to use
 # Create the DNS Challenge Record:
 # manage_challenge_record set
 
 # Remove the DNS Challenge Record:
 # manage_challenge_record remove}
-#}
+}
 ################################# End Functions ###############################
 echo "after functions"
 ###############################################################################
