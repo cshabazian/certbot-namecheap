@@ -12,7 +12,8 @@ SECRETS_FILE_BASE=${HOME}/.secrets/namecert_
 ###############################################################################
 
 ############################### Fixed Variables ###############################
-NECESSARY_BINARIES="curl python3 awk certbot"
+NECESSARY_BINARIES="curl python3 awk"
+#NECESSARY_BINARIES="curl python3 awk certbot"
 PROD_ACME_SERVER="https://acme-v02.api.letsencrypt.org/directory"
 STAGE_ACME_SERVER="https://acme-staging-v02.api.letsencrypt.org/directory"
 WRITE_SECRET=0 # This variable is used to determine if we need to write the secrets file at the end of the script. It is set to 1 if any of the necessary variables are not set and we have to ask the user for input.  
