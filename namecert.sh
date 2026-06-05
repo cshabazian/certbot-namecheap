@@ -26,7 +26,7 @@ if [[ "${1}" = "-h" || "${1}" = "--help" ]] ; then echo -e "\nUsage: $(basename 
 echo "past first usage check"
 echo "1 is ${1} and 2 is ${2}"
 
-if [[ ! "${1}" = "issue" || ! "${1}" = "renew" ]] ; then echo -e "\nUsage: $(basename ${0}) <issue|renew> <domain.name>\n\n" ; exit ; fi
+if [[  "${1}" != "issue" || "${1}" != "renew" ]] ; then echo -e "\nUsage: $(basename ${0}) <issue|renew> <domain.name>\n\n" ; exit ; fi
 ################################## End Usage ##################################
 
 ###############################################################################
