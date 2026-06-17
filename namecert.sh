@@ -153,6 +153,7 @@ then    echo "Saving secrets to ${SECRETS_FILE_BASE}${DOMAIN_NAME}"
         echo "TLD=\"${TLD}\"" >> "${SECRETS_FILE_BASE}${DOMAIN_NAME}"
         echo "EMAIL=\"${EMAIL}\"" >> "${SECRETS_FILE_BASE}${DOMAIN_NAME}"
 fi  
+fi
 
 read -p "Would you like to issue a new certificate or renew an existing one? (issue/renew) " ACTION
 if [[ "${ACTION,,}" == "issue" ]]
