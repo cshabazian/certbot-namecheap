@@ -118,6 +118,7 @@ then    read -p "What is the username for the API key? " API_USER
 else    API_USER="${USERNAME}"
 fi  
 
+[[ -z "${CLIENT_IP}" ]] && WRITE_SECRET=1 && \
 read -p "Your external IP address is ${EXTERNAL_IP}. Is this correct client IP address to use? (y/n) " IP_CONFIRM
 if [[ "${IP_CONFIRM,,}" != "y" ]]
 then    read -p "Please enter the correct cient IP address to use: " CLIENT_IP
