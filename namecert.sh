@@ -156,4 +156,10 @@ fi
 
 read -p "Would you like to issue a new certificate or renew an existing one? (issue/renew) " ACTION
 if [[ "${ACTION,,}" == "issue" ]]
+then    issue_certificate
+elif [[ "${ACTION,,}" == "renew" ]]
+then    renew_certificate
+else    echo "Invalid action. Please enter 'issue' or 'renew'."
+        exit
+fi
 ################################## End Script #################################
