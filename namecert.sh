@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # TO DO:
+# source variable file with verfied to know whether or not to test first with staging
 # Get variables and write a config file for the user to use in the future
-# Run first to staging and then to production
+# Run first to staging and then to production if VERIFIED=0
 # Setup a cron job to run this script on a regular basis
 
 ################################ User Variables ###############################
@@ -52,8 +53,9 @@ function check_permission() {
 }
 
 function issue_certificate() {
-# Check this    
-certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" -d "${SLD}.${TLD}" --email "${EMAIL}" --agree-tos --non-interactive
+# Check this
+LESERVER=${STAGE_ACME_SERVER}
+certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${LESERVER}" -d "${SLD}.${TLD}" --email "${EMAIL}" --agree-tos --non-interactive
 # Figure out how to use
 # Create the DNS Challenge Record:
 # manage_challenge_record set
@@ -64,7 +66,7 @@ certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3
 
 function renew_certificate() {
 # Check This    
-certbot renew --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${1}" --email "${EMAIL}" --agree-tos --non-interactive
+certbot renew --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${LESERVER}" --email "${EMAIL}" --agree-tos --non-interactive
 # Figure out how to use
 # Create the DNS Challenge Record:
 # manage_challenge_record set
