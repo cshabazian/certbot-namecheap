@@ -45,11 +45,14 @@ function manage_challenge_record() {
 }
 
 function check_permission() {
-    if [[ "$EUID" -ne 0 || $(sudo -l certbot >/dev/null 2>&1) -gt 0 ]]
-    then    
-        echo "This script must be run with root privileges or with sudo access to certbot."
-        exit
-    fi  
+    if [ "$EUID" -ne 0 ] ; then if
+       [ $(sudo -l certbot) ] ; then
+            echo "Access available"
+        else
+            echo  "This script must be run with root privileges or with sudo access to certbot."
+            exit
+        fi
+        fi
 }
 
 function issue_certificate() {
