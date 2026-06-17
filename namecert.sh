@@ -134,7 +134,7 @@ read -p "What email address do you want to use for the certificate? " EMAIL
 ###############################################################################
 
 ################################## Run Script #################################
-if [[ "${WRITE_SECRET}" -eq 1 ]]
+if [[ "${WRITE_SECRET}" -eq 1 ]] ; then
 echo "Would you like me to save the following information to a secrets file for future use?"
 echo "Username: ${USERNAME}"
 echo "API Key: ${API_KEY}"
