@@ -122,10 +122,10 @@ else    CLIENT_IP="${EXTERNAL_IP}"
 fi
 
 [[ -z "${SLD}" ]]&& WRITE_SECRET=1 && \
-read -p "What is the domain you want to get a certificate for? (Example: the mydomain in mydomain.com)" SLD
+read -p "What is the domain you want to get a certificate for? (Example: the mydomain in mydomain.com) " SLD
 
 [[ -z "${TLD}" ]] && WRITE_SECRET=1 && \
-read -p "What is the TLD for the domain you want to get a certificate for? (Example: the com in mydomain.com)" TLD
+read -p "What is the TLD for the domain you want to get a certificate for? (Example: the com in mydomain.com) " TLD
 
 [[ -z "${EMAIL}" ]] && WRITE_SECRET=1 && \
 read -p "What email address do you want to use for the certificate? " EMAIL
