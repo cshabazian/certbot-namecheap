@@ -161,7 +161,7 @@ then    echo "Saving secrets to ${SECRETS_FILE_BASE}${DOMAIN_NAME}"
 fi  
 fi
 
-[[  "${1}" != "issue" && "${1}" != "renew" ]] && read -p "Would you like to issue a new certificate or renew an existing one? (issue/renew) " ACTION
+[[  "${1}" != "issue" && "${1}" != "renew" ]] && read -p "Would you like to issue a new certificate or renew an existing one? (issue/renew) " ACTION || ACTION="${1}"
 if [[ "${ACTION,,}" == "issue" ]]
 then    issue_certificate
 elif [[ "${ACTION,,}" == "renew" ]]
