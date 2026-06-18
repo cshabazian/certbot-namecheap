@@ -1,0 +1,1 @@
+python3 -c "from namecheap import *; remove_challenge_record()"

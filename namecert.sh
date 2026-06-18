@@ -14,6 +14,7 @@ SECRETS_FILE_BASE=${HOME}/.secrets/namecert_
 NECESSARY_BINARIES="curl python3 awk certbot"
 PROD_ACME_SERVER="https://acme-v02.api.letsencrypt.org/directory"
 STAGE_ACME_SERVER="https://acme-staging-v02.api.letsencrypt.org/directory"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 WRITE_SECRET=0 # This variable is used to determine if we need to write the secrets file at the end of the script. It is set to 1 if any of the necessary variables are not set and we have to ask the user for input.  
 ############################# End Fixed Variables #############################
 
@@ -66,7 +67,7 @@ export APPLY_DOMAIN=*.${SLD}.${TLD}
 export ACME_MODE=stage
 export EMAIL=${EMAIL}
 
-sudo certbot certonly --manual --preferred-challenges=dns --manual-auth-hook "python3 -c 'from namecheap import *; set_challenge_record()'" --manual-cleanup-hook "python3 -c 'from namecheap import *; remove_challenge_record()'" --server "${LESERVER}" -d "${SLD}.${TLD}" --email "${EMAIL}" --agree-tos --non-interactive --dry-run
+sudo certbot certonly --manual --preferred-challenges=dns --manual-auth-hook ${SCRIPT_DIR}/authenticator.sh --manual-cleanup-hook ${SCRIPT_DIR}/cleanup.sh --server "${ACME_MODE}" -d "${APPLY_DOMAIN}" --email "${EMAIL}" --agree-tos --non-interactive --dry-run
 # Figure out how to use
 # Create the DNS Challenge Record:
 # manage_challenge_record set
