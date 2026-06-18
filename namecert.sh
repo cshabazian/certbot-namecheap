@@ -77,6 +77,9 @@ echo "export TLD=${TLD}"
 echo "export APPLY_DOMAIN=*.${SLD}.${TLD}"
 echo "export ACME_MODE=stage"
 echo "export EMAIL=${EMAIL}"
+echo "PROD_ACME_SERVER=https://acme-v02.api.letsencrypt.org/directory"
+echo "STAGE_ACME_SERVER=https://acme-staging-v02.api.letsencrypt.org/directory"
+echo "SCRIPT_DIR=$( cd -- '$( dirname -- '${BASH_SOURCE[0]}' )' &> /dev/null && pwd )"
 
 # sudo certbot certonly --manual --preferred-challenges=dns --manual-auth-hook ${SCRIPT_DIR}/authenticator.sh --manual-cleanup-hook ${SCRIPT_DIR}/cleanup.sh --server "${LESERVER}" -d "${APPLY_DOMAIN}" --email "${EMAIL}" --agree-tos --non-interactive --dry-run
 # Figure out how to use
