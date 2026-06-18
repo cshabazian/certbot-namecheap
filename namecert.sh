@@ -67,7 +67,18 @@ export APPLY_DOMAIN=*.${SLD}.${TLD}
 export ACME_MODE=stage
 export EMAIL=${EMAIL}
 
-sudo certbot certonly --manual --preferred-challenges=dns --manual-auth-hook ${SCRIPT_DIR}/authenticator.sh --manual-cleanup-hook ${SCRIPT_DIR}/cleanup.sh --server "${LESERVER}" -d "${APPLY_DOMAIN}" --email "${EMAIL}" --agree-tos --non-interactive --dry-run
+echo "LESERVER=${STAGE_ACME_SERVER}"
+echo "export API_USER=${USERNAME}"
+echo "export API_KEY=${API_KEY}"
+echo "export USERNAME=${API_USER}"
+echo "export CLIENT_IP=${CLIENT_IP}"
+echo "export SLD=${SLD}"
+echo "export TLD=${TLD}"
+echo "export APPLY_DOMAIN=*.${SLD}.${TLD}"
+echo "export ACME_MODE=stage"
+echo "export EMAIL=${EMAIL}"
+
+# sudo certbot certonly --manual --preferred-challenges=dns --manual-auth-hook ${SCRIPT_DIR}/authenticator.sh --manual-cleanup-hook ${SCRIPT_DIR}/cleanup.sh --server "${LESERVER}" -d "${APPLY_DOMAIN}" --email "${EMAIL}" --agree-tos --non-interactive --dry-run
 # Figure out how to use
 # Create the DNS Challenge Record:
 # manage_challenge_record set
