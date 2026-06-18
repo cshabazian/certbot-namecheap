@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# TO DO:
-# source variable file with verfied to know whether or not to test first with staging
-# Get variables and write a config file for the user to use in the future
+# TO DO
 # Run first to staging and then to production if VERIFIED=0
 # Setup a cron job to run this script on a regular basis
 
