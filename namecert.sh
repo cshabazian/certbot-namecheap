@@ -47,7 +47,7 @@ function manage_challenge_record() {
 function check_permission() {
     if [ "$EUID" -ne 0 ] ; then if
        [ $(sudo -l certbot) ] ; then
-            echo "Access available"
+            echo "Access available" > /dev/null
         else
             echo  "This script must be run with root privileges or with sudo access to certbot."
             exit
