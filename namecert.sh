@@ -78,7 +78,7 @@ sudo certbot renew --manual --preferred-challenges=dns --manual-auth-hook "pytho
 # manage_challenge_record remove}
 }
 ################################# End Functions ###############################
-echo "after functions"
+ 
 ###############################################################################
 
 ############################## Pre Flight Checks ##############################
